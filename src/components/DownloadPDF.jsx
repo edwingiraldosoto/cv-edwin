@@ -1,7 +1,7 @@
 function DownloadPDF() {
   const handleDownload = () => {
     // La ruta apunta a la carpeta public de tu proyecto
-    const fileUrl = '/public/CV_Edwin_Giraldo_Soto_ATS_Harvard.pdf'; 
+    const fileUrl = 'CV_Edwin_Giraldo_Soto_ATS_Harvard.pdf'; 
     
     // Creamos un enlace temporal para forzar la descarga
     const link = document.createElement('a');
@@ -19,5 +19,6 @@ function DownloadPDF() {
     </button>
   );
 }
+
 
 export default DownloadPDF;

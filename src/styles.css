@@ -106,8 +106,11 @@ h2::after {
 }
 
 .timeline-item {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   position: relative;
+  page-break-inside: avoid; 
+  break-inside: avoid;
+  display: block;
 }
 
 /* El círculo verde en la barra */
@@ -151,14 +154,15 @@ h2::after {
 
 .timeline-content ul {
   list-style: none;
+  padding-left: 0;
 }
 
 .timeline-content li {
   font-size: 14px;
   color: #666;
-  margin-bottom: 6px;
-  position: relative;
-  padding-left: 15px;
+  line-height: 1.6; /* Mejora la lectura para el reclutador */
+  margin-bottom: 8px;
+  page-break-inside: avoid;
 }
 
 .timeline-content li::before {
@@ -407,4 +411,5 @@ section {
   color: #555;               /* Un gris oscuro profesional */
   margin-top: 15px;          /* Espacio respecto a la info de contacto */
   hyphens: auto;             /* (Opcional) Ayuda a que las palabras largas se corten bien */
+
 }

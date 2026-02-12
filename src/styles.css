@@ -14,7 +14,7 @@ body {
   background-color: #ffffff;
   color: #666;
   /* Eliminamos cualquier scroll horizontal accidental */
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 /* SIDEBAR: Fija y sin huecos */
@@ -23,14 +23,14 @@ body {
   background: #666666;
   color: #ffffff;
   padding: 60px 40px;
-  
+
   /* Esto soluciona las flechas rojas: */
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   height: 100vh;
-  
+
   display: flex;
   flex-direction: column;
   z-index: 100;
@@ -40,34 +40,56 @@ body {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  margin-bottom: 30px;
-  border: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 10px;
+  /* Reducido al mínimo */
 }
 
 .sidebar-name {
-  font-size: 26px;
+  font-size: 22px;
+  /* Un poco más grande que el resto */
   font-weight: 700;
   color: #fff;
   line-height: 1.1;
+  margin-bottom: 2px;
+  /* Espacio mínimo */
+  display: block;
 }
 
 .sidebar-role {
   font-size: 14px;
   color: #bbb;
-  margin-top: 10px;
+  margin-top: 2px;
+  /* Súper pegado al de arriba */
+  margin-bottom: 0px;
   font-weight: 300;
+  line-height: 1.2;
+}
+
+/* IMPORTANTE: Evita que los h2 de la sidebar tengan el cuadro verde o línea */
+.sidebar h2::before,
+.sidebar h2::after {
+  display: none !important;
+}
+
+.sidebar h2 {
+  gap: 0;
+  margin-bottom: 5px;
 }
 
 /* CONTENIDO: Desplazado para no chocar con la sidebar */
 .content {
-  margin-left: 320px; /* Igual al ancho de la sidebar */
-  padding: 80px 60px;
+  margin-left: 320px;
+  /* Igual al ancho de la sidebar */
+  padding: 80px 80px 80px 60px;
   min-height: 100vh;
   background-color: #fff;
+  overflow-x: hidden;
+  /* Evita scroll horizontal */
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1000px;
+  width: 100%;
 }
 
 /* TÍTULOS CON CUADRADO VERDE */
@@ -99,7 +121,8 @@ h2::after {
 
 /* TIMELINE MEJORADA */
 .timeline {
-  border-left: 2px solid #8dc63f; /* Tu verde característico */
+  border-left: 2px solid #8dc63f;
+  /* Tu verde característico */
   margin-left: 20px;
   padding-left: 30px;
   position: relative;
@@ -114,7 +137,8 @@ h2::after {
 .timeline-item::before {
   content: "";
   position: absolute;
-  left: -41px; /* Ajusta según tu padding */
+  left: -41px;
+  /* Ajusta según tu padding */
   top: 5px;
   width: 15px;
   height: 15px;
@@ -153,12 +177,23 @@ h2::after {
   list-style: none;
 }
 
+.timeline-content {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 750px;
+  text-align: justify;
+}
+
 .timeline-content li {
   font-size: 14px;
   color: #666;
   margin-bottom: 6px;
   position: relative;
   padding-left: 15px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  text-align: justify;
 }
 
 .timeline-content li::before {
@@ -178,37 +213,115 @@ h2::after {
     align-items: center;
     text-align: center;
   }
+
   .content {
     margin-left: 0;
     padding: 40px 20px;
   }
+
   .timeline {
     margin-left: 20px;
   }
+
   .timeline-year {
     position: relative;
     left: 0;
     margin-bottom: 15px;
     display: inline-block;
   }
+
+  .timeline-content {
+    max-width: 100%;
+  }
+
+  .skills-list,
+  .achievements-list {
+    max-width: 100%;
+  }
 }
 
 /* Espaciado general entre secciones */
 section {
-  margin-bottom: 60px; /* Esto separa Competencias de Experiencia */
+  margin-bottom: 60px;
+  /* Esto separa Competencias de Experiencia */
 }
 
-/* Ajuste para las listas de competencias */
+/* Alineación de tabla con texto justificado a la derecha */
 .skills-list {
   list-style: none;
-  margin-bottom: 40px; /* Espacio después de la última competencia */
+  margin-bottom: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* Espacio entre filas */
 }
 
 .skills-list li {
-  margin-bottom: 12px; /* Espacio entre cada línea de competencia */
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
+  display: grid;
+  /* Bajamos de 180px a 160px para dar más espacio al texto largo */
+  grid-template-columns: 160px 1fr;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.skills-list li strong {
+  color: #333;
+  font-weight: 700;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.skills-list li span {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: justify;
+  text-justify: inter-word;
+  display: block;
+
+  /* --- EL ARREGLO DEFINITIVO --- */
+  max-width: 600px;
+  /* Esto frena el texto en seco antes de llegar a la flecha */
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+  .skills-list li {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .skills-list li span {
+    text-align: left;
+    /* En móviles el justificado suele verse mal */
+  }
+}
+
+/* Ajuste para la lista de logros destacados */
+.achievements-list {
+  list-style: none;
+  margin-bottom: 40px;
+  max-width: 750px;
+}
+
+.achievements-list li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 20px;
+  text-align: justify;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.achievements-list li::before {
+  content: "•";
+  color: #8dc63f;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
 }
 
 /* Mejora para los títulos de sección */
@@ -218,7 +331,8 @@ h2 {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-bottom: 40px; /* Más espacio entre el título y el contenido que sigue */
+  margin-bottom: 40px;
+  /* Más espacio entre el título y el contenido que sigue */
   padding-top: 20px;
 }
 
@@ -226,15 +340,18 @@ h2 {
 .timeline {
   margin-top: 20px;
   position: relative;
-  margin-left: 140px;
+  margin-left: 20px;
   border-left: 1px solid #eee;
+  padding-left: 30px;
 }
 
 /* CONTENEDOR DE REDES EN SIDEBAR */
 .sidebar-social {
-  margin-top: auto; /* Lo empuja al final de la sidebar */
+  margin-top: 10px;
+  /* Cambia 'auto' por un espacio fijo */
+  padding-bottom: 5px;
+  /* Espacio extra al final para que no peguen al borde */
   width: 100%;
-  padding-top: 20px;
 }
 
 .btn-linkedin {
@@ -242,7 +359,8 @@ h2 {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background-color: #0077b5; /* Azul oficial de LinkedIn */
+  background-color: #0077b5;
+  /* Azul oficial de LinkedIn */
   color: white;
   text-decoration: none;
   padding: 12px 20px;
@@ -255,22 +373,26 @@ h2 {
 }
 
 .btn-linkedin i {
-  font-size: 18px; /* Tamaño del icono */
+  font-size: 18px;
+  /* Tamaño del icono */
 }
 
 .btn-linkedin:hover {
-  background-color: #005582; /* Un azul más oscuro al pasar el mouse */
-  transform: translateY(-2px); /* Efecto de levante */
+  background-color: #005582;
+  /* Un azul más oscuro al pasar el mouse */
+  transform: translateY(-2px);
+  /* Efecto de levante */
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   color: #ffffff;
 }
 
 .btn-download {
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background-color: #8dc63f; /* Color verde directo */
+  background-color: #8dc63f;
+  /* Color verde directo */
   color: white;
   border: none;
   padding: 12px 20px;
@@ -285,21 +407,24 @@ h2 {
 }
 
 .btn-download:hover {
-  background-color: #76a834; /* Un verde más oscuro */
+  background-color: #76a834;
+  /* Un verde más oscuro */
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Ocultar botones cuando se genera el PDF */
 @media print {
-  .sidebar-social, .btn-download {
+
+  .sidebar-social,
+  .btn-download {
     display: none !important;
   }
 }
 
 /* Esto evita que el PDF "corte" secciones a la mitad */
 section {
-  page-break-inside: avoid; 
+  page-break-inside: avoid;
   margin-bottom: 40px !important;
   display: block;
   width: 100%;
@@ -312,31 +437,44 @@ section {
 
 /* Forzar que la sidebar gris ocupe todo el alto en el PDF */
 @media print {
+
   /* Evita que el navegador corte la página mal */
   body {
-    width: 210mm; /* Ancho estándar A4/Letter aprox */
+    width: 210mm;
+    /* Ancho estándar A4/Letter aprox */
   }
 
   .sidebar {
-    position: absolute !important;
-    width: 280px !important; /* Un poco más angosta para el PDF */
-    height: 100% !important;
-    background-color: #666666 !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-    left: 0 !important;
-    top: 0 !important;
+    width: 320px;
+    background: #666666;
+    color: #ffffff;
+    padding: 40px 30px;
+    /* Reduje un poco el padding para ganar espacio */
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+
+    /* ESTO ES LO MÁS IMPORTANTE: */
+    overflow-y: auto;
   }
 
   .content {
-    margin-left: 280px !important; /* Debe coincidir con el ancho de la sidebar */
+    margin-left: 280px !important;
+    /* Debe coincidir con el ancho de la sidebar */
     width: calc(100% - 280px) !important;
     padding: 30px !important;
     background: white !important;
   }
 
   /* Ocultar elementos innecesarios */
-  .btn-download, .btn-linkedin, .sidebar-social {
+  .btn-download,
+  .btn-linkedin,
+  .sidebar-social {
     display: none !important;
     visibility: hidden !important;
   }
@@ -347,14 +485,16 @@ section {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background-color: #76a834; /* Un gris oscuro para diferenciarlo del azul de LinkedIn */
+  background-color: #76a834;
+  /* Un gris oscuro para diferenciarlo del azul de LinkedIn */
   color: white;
   text-decoration: none;
   padding: 12px 20px;
   border-radius: 4px;
   font-size: 14px;
   font-weight: 600;
-  margin-top: 10px; /* Espacio entre LinkedIn y el Teléfono */
+  margin-top: 10px;
+  /* Espacio entre LinkedIn y el Teléfono */
   transition: all 0.3s ease;
   width: 100%;
 }
@@ -383,7 +523,8 @@ section {
 .map-wrapper {
   width: 90%;
   max-width: 1100px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra para resaltar el mapa */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  /* Sombra para resaltar el mapa */
   border-radius: 15px;
   overflow: hidden;
 }
@@ -401,10 +542,16 @@ section {
 }
 
 .profile-description {
-  text-align: justify;       /* Justifica el texto para que quede alineado a ambos lados */
-  max-width: 1000px;          /* Limita el ancho para que no se vaya hasta el final */
-  line-height: 2;          /* Mejora la legibilidad con un buen espacio entre líneas */
-  color: #555;               /* Un gris oscuro profesional */
-  margin-top: 15px;          /* Espacio respecto a la info de contacto */
-  hyphens: auto;             /* (Opcional) Ayuda a que las palabras largas se corten bien */
+  text-align: justify;
+  /* Justifica el texto para que quede alineado a ambos lados */
+  max-width: 1000px;
+  /* Limita el ancho para que no se vaya hasta el final */
+  line-height: 2;
+  /* Mejora la legibilidad con un buen espacio entre líneas */
+  color: #555;
+  /* Un gris oscuro profesional */
+  margin-top: 15px;
+  /* Espacio respecto a la info de contacto */
+  hyphens: auto;
+  /* (Opcional) Ayuda a que las palabras largas se corten bien */
 }

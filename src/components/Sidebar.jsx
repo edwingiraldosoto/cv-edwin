@@ -11,28 +11,23 @@ function Sidebar() {
         className="sidebar-photo"
         crossOrigin="anonymous"
       />
-      
-      <p className="sidebar-hello">Hola, Yo soy</p>
-      <h2 className="sidebar-name">{cv.name}</h2>
-      <h2 className="sidebar-name">{cv.title}</h2>
-      <h2 className="sidebar-name">{cv.specialization}</h2>
 
-   <div className="sidebar-social">
-  {/* LinkedIn */}
-  <a href={cv.linkedin} target="_blank" rel="noopener noreferrer" className="btn-social btn-linkedin">
-    <i className="fa-brands fa-linkedin"></i> LinkedIn
-  </a>
+      {/* Usamos h1 para el nombre y p para los roles para que no hereden los estilos de h2 (cuadros verdes) */}
+      <h1 className="sidebar-name">{cv.name}</h1>
+      <p className="sidebar-role">{cv.title}</p>
+      <p className="sidebar-role">{cv.specialization}</p>
 
-  {/* Teléfono */}
-  <a href={`tel:${cv.Phone}`} className="btn-social btn-phone">
-    <i className="fa-solid fa-mobile-screen-button"></i> {cv.Phone}
-  </a>
+      <div className="sidebar-social">
+        <a href={cv.linkedin} target="_blank" rel="noopener noreferrer" className="btn-social btn-linkedin">
+          <i className="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
 
-  {/* Descargar PDF */}
-  <DownloadPDF />
-</div>
+        <a href={`tel:${cv.Phone}`} className="btn-social btn-phone">
+          <i className="fa-solid fa-mobile-screen-button"></i> {cv.Phone}
+        </a>
 
-
+        <DownloadPDF />
+      </div>
     </aside>
   );
 }

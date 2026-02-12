@@ -36,8 +36,8 @@ Liderazgo de equipos técnicos, optimización de rendimiento y entrega bajo meto
     value: "REST API, JSON, XML, microservicios, ETL, integración de sistemas empresariales"
   },
   {
-    label: "Automatización e IA Aplicada",
-    value: "n8n (webhooks, workflows, orquestación), integración APIs REST, automatización con Google Sheets, IA conversacional (Retell AI), procesamiento y activación automática de llamadas mediante flujos backend"
+    label: "Automatización-IA",
+    value: "n8n(webhooks, workflows, orquestación), integración APIs REST, automatización con Google Sheets, IA conversacional (Retell AI), procesamiento y activación automática de llamadas mediante flujos backend"
   },
   {
     label: "Reportes",
@@ -185,4 +185,5 @@ Lenguaje: [
   "Ingles: A2" 
 ],
 };
+
 

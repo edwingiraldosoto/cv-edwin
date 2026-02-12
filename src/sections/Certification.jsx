@@ -3,7 +3,7 @@ import { cv } from "../data/cv";
 function Certification() {
   return (
     <section style={{ marginTop: "3rem" }}>
-      <h2>CERTIFICACIONES</h2>
+      <h2>Certificaciones</h2>
 
       <ul>
         {cv.Certification.map((Certi, index) => (

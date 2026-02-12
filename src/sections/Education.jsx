@@ -3,7 +3,7 @@ import { cv } from "../data/cv";
 function Education() {
   return (
     <section style={{ marginTop: "3rem" }}>
-      <h2>EDUCACIÓN</h2>
+      <h2>Educación</h2>
 
       <div className="timeline">
         {cv.Education.map((edu, index) => (

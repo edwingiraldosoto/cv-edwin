@@ -4,6 +4,7 @@ export const cv = {
   specialization: "Especialista en gestión de Software",
   focusing: "Backend",
   location: "Medellín, Colombia",
+  SkillsHeader: "Senior Backend Developer | Full Stack Engineer | Node.js | .NET | Java | SQL Server | Oracle PL/SQL | React | REST APIs | Microservices | AI & Workflow Automation (n8n, Make, Zapier) | Python (Learning)",
   Phone: "(+57) 3173508606",
   Mail: "edwingiraldosoto@gmail.com",
   linkedin: "https://www.linkedin.com/in/edwin-giraldo-soto-133329162/",
@@ -37,7 +38,7 @@ Liderazgo de equipos técnicos, optimización de rendimiento y entrega bajo meto
   },
   {
     label: "Automatización-IA",
-    value: "n8n(webhooks, workflows, orquestación), integración APIs REST, automatización con Google Sheets, IA conversacional (Retell AI), procesamiento y activación automática de llamadas mediante flujos backend"
+    value: "n8n(webhooks, workflows, orquestación),Make, Zapier, integración APIs REST, automatización con Google Sheets, IA conversacional (Retell AI)"
   },
   {
     label: "Reportes",
@@ -185,5 +186,6 @@ Lenguaje: [
   "Ingles: A2" 
 ],
 };
+
 
 

@@ -5,6 +5,7 @@ function Profile() {
     <section>
       <h1>{cv.name}</h1>
       <h2>{cv.title}</h2>
+      <p>{cv.SkillsHeader}</p>
       <p>{cv.location}</p>
       <p>
         <a href={`mailto:${cv.Mail}`} className="profile-link">
@@ -22,3 +23,4 @@ function Profile() {
 }
 
 export default Profile;
+

@@ -4,8 +4,12 @@ function Profile() {
   return (
     <section>
       <h1>{cv.name}</h1>
-      <h2>{cv.title}</h2>
-      <p>{cv.SkillsHeader}</p>
+      <h2>{cv.title}</h2>      
+      <div className="profile-container">
+          <p className="profile-description">
+            {cv.SkillsHeader}
+          </p>
+      </div>
       <p>{cv.location}</p>
       <p>
         <a href={`mailto:${cv.Mail}`} className="profile-link">
@@ -14,13 +18,14 @@ function Profile() {
       </p>
       <p>{cv.modality}</p>
       <div className="profile-container">
-        <p className="profile-description">
-        {cv.profile}
-      </p>
-</div>
+          <p className="profile-description">
+            {cv.profile}
+          </p>
+      </div>
     </section>
   );
 }
 
 export default Profile;
+
 

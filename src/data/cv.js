@@ -4,15 +4,15 @@ export const cv = {
   specialization: "Especialista en gestión de Software",
   focusing: "Backend",
   location: "Medellín, Colombia",
-  SkillsHeader: `Senior Backend Developer | Full Stack Engineer | Node.js | .NET | Java | SQL Server | Oracle PL/SQL | React | REST APIs | Microservices | 
-  AI & Workflow Automation (n8n, Make, Zapier) | Python (Learning)`,
+  SkillsHeader: `Backend Developer | Full Stack | Node.js | .NET | Java | SQL Server | Oracle PL/SQL | React | REST APIs | Microservices | 
+  Automatización con IA | Python | Scrum`,
   Phone: "(+57) 3173508606",
   Mail: "edwingiraldosoto@gmail.com",
   linkedin: "https://www.linkedin.com/in/edwingiraldosoto/",
   modality: "Remoto / Hibrido / Presencial",
   profile: `
-Ingeniero de Sistemas con Especialización en Gestión de Software y +15 años desarrollando soluciones empresariales para energía, telecomunicaciones, 
-finanzas y sector público. Experto en desarrollo full-stack, arquitectura de bases de datos (SQL Server, Oracle), 
+Ingeniero de Sistemas con Especialización en Gestión de Software y +20 años desarrollando soluciones empresariales para energía, telecomunicaciones, 
+finanzas y sector público. Desarrollo full-stack, arquitectura de bases de datos (SQL Server, Oracle), 
 integración de sistemas, automatización con IA y soporte técnico avanzado N2/N3. 
 Liderazgo de equipos técnicos, optimización de rendimiento y entrega bajo metodologías ágiles (Scrum, SDLC).
   `,
@@ -187,6 +187,7 @@ Lenguaje: [
   "Ingles: A2" 
 ],
 };
+
 
 
 

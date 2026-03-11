@@ -72,7 +72,7 @@ Achievements: [
 ],
   experience: [
     {
-      company: "Desarrollador Freelance",
+      company: "Desarrollador Freelance / Proyectos Personales con IA",
       role: "Desarrollador Full Stack",
       period: "Ene 2026 – Presente",
       location: "Medellín, Colombia",
@@ -198,6 +198,7 @@ Lenguaje: [
   "Ingles: Intermedio – En proceso de mejora activa" 
 ],
 };
+
 
 
 

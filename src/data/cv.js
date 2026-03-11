@@ -72,6 +72,17 @@ Achievements: [
 ],
   experience: [
     {
+      company: "Desarrollador Freelance",
+      role: "Desarrollador Full Stack",
+      period: "Ene 2026 – Presente",
+      location: "Medellín, Colombia",
+      activities: [
+        "Automatización de flujos con n8n",
+        "integración de APIs REST y exploración de soluciones con IA",
+        "Desarrollo de proyectos propios en Java Spring Boot y Node.js"
+        ]
+    },
+    {
       company: "Alcaldía de Medellín - INDER",
       role: "Desarrollador Full Stack",
       period: "Abr 2025 – Dic 2025",
@@ -184,9 +195,10 @@ Certification: [
 ],
 Lenguaje: [
   "Español: Nativo",
-  "Ingles: A2" 
+  "Ingles: Intermedio – En proceso de mejora activa" 
 ],
 };
+
 
 
 

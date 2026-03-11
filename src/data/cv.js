@@ -8,7 +8,7 @@ export const cv = {
   AI & Workflow Automation (n8n, Make, Zapier) | Python (Learning)`,
   Phone: "(+57) 3173508606",
   Mail: "edwingiraldosoto@gmail.com",
-  linkedin: "https://www.linkedin.com/in/edwin-giraldo-soto-133329162/",
+  linkedin: "https://www.linkedin.com/in/edwingiraldosoto/",
   modality: "Remoto / Hibrido / Presencial",
   profile: `
 Ingeniero de Sistemas con Especialización en Gestión de Software y +15 años desarrollando soluciones empresariales para energía, telecomunicaciones, 
@@ -187,6 +187,7 @@ Lenguaje: [
   "Ingles: A2" 
 ],
 };
+
 
 
 

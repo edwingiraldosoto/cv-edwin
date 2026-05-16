@@ -2,12 +2,12 @@ import { cv } from "../data/cv";
 
 function Certification() {
   return (
-    <section style={{ marginTop: "3rem" }}>
+    <section>
       <h2>Certificaciones</h2>
 
-      <ul>
-        {cv.Certification.map((Certi, index) => (
-          <li key={index}>{Certi}</li>
+      <ul className="achievements-list">
+        {cv.Certification.map((cert, index) => (
+          <li key={index}>{cert}</li>
         ))}
       </ul>
     </section>
